@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <ENSDK.h>
 #import "SVProgressHUD.h"
+#import "NoteListResultViewController.h"
 
 @interface ViewController ()
 
@@ -144,8 +145,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ENNotebook *notebook = [self.notebookList objectAtIndex:indexPath.row];
-//    NoteListResultViewController *resultVC = [[NoteListResultViewController alloc] initWithNoteSearch:nil notebook:notebook];
-//    [self.navigationController pushViewController:resultVC animated:YES];
-//    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NoteListResultViewController *resultVC = [[NoteListResultViewController alloc] initWithNoteSearch:nil notebook:notebook];
+    [self.navigationController pushViewController:resultVC animated:YES];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 @end

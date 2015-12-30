@@ -20,8 +20,8 @@
     // Override point for customization after application launch.
     
     // Set shared session key information.
-    [ENSession setSharedSessionConsumerKey:@"nrevmed"
-                            consumerSecret:@"e89dede9498d0801"
+    [ENSession setSharedSessionConsumerKey:@"nrevmed-2235"
+                            consumerSecret:@"2eeb0d4a809c130f"
                               optionalHost:ENSessionHostSandbox];
     
     return YES;
