@@ -1,0 +1,13 @@
+PODS:
+  - evernote-cloud-sdk-ios (2.0.5)
+  - SVProgressHUD (1.1.3)
+
+DEPENDENCIES:
+  - evernote-cloud-sdk-ios
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  evernote-cloud-sdk-ios: 048cf5dcdc0c64069192d1336b7e121bc1a77e12
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+
+COCOAPODS: 0.39.0

@@ -85,22 +85,31 @@
 }
 
 - (void)reloadNotebooks {
-    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
-    __weak typeof(self) weakSelf = self;
-    [[ENSession sharedSession] listNotebooksWithCompletion:^(NSArray *notebooks, NSError *listNotebooksError) {
-        [SVProgressHUD dismiss];
-        if (listNotebooksError) {
-            [[[UIAlertView alloc] initWithTitle:nil
-                                       message:[listNotebooksError localizedDescription]
-                                      delegate:nil
-                             cancelButtonTitle:nil
-                              otherButtonTitles:@"OK", nil] show];
-            return;
-        }
+    
+    if ([[ENSession sharedSession] isAuthenticated]) {
+        [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+        __weak typeof(self) weakSelf = self;
+        [[ENSession sharedSession] listNotebooksWithCompletion:^(NSArray *notebooks, NSError *listNotebooksError) {
+            [SVProgressHUD dismiss];
+            if (listNotebooksError) {
+                [[[UIAlertView alloc] initWithTitle:nil
+                                            message:[listNotebooksError localizedDescription]
+                                           delegate:nil
+                                  cancelButtonTitle:nil
+                                  otherButtonTitles:@"OK", nil] show];
+                return;
+            }
+            
+            weakSelf.notebookList = notebooks;
+            [weakSelf.tableView reloadData];
+        }];
+    }
+    else{
         
-        weakSelf.notebookList = notebooks;
-        [weakSelf.tableView reloadData];
-    }];
+        self.notebookList = [NSArray array];
+        [self.tableView reloadData];
+    }
+    
 }
 
 #pragma mark - TableView Delegate Methods

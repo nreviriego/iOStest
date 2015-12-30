@@ -16,6 +16,9 @@
 		FBFB5DFB1C33EF510039ED82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBFB5DF91C33EF510039ED82 /* LaunchScreen.storyboard */; };
 		FBFB5E061C33EF510039ED82 /* iOStestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFB5E051C33EF510039ED82 /* iOStestTests.m */; };
 		FBFB5E111C33EF510039ED82 /* iOStestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFB5E101C33EF510039ED82 /* iOStestUITests.m */; };
+		FBFB5E201C3460360039ED82 /* NoteListResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFB5E1F1C3460360039ED82 /* NoteListResultViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FBFB5E211C3460360039ED82 /* NoteListResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFB5E1F1C3460360039ED82 /* NoteListResultViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FBFB5E221C3460360039ED82 /* NoteListResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFB5E1F1C3460360039ED82 /* NoteListResultViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,8 @@
 		FBFB5E0C1C33EF510039ED82 /* iOStestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOStestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBFB5E101C33EF510039ED82 /* iOStestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOStestUITests.m; sourceTree = "<group>"; };
 		FBFB5E121C33EF510039ED82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBFB5E1E1C3460360039ED82 /* NoteListResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteListResultViewController.h; sourceTree = "<group>"; };
+		FBFB5E1F1C3460360039ED82 /* NoteListResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteListResultViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +134,8 @@
 				FBFB5DEF1C33EF510039ED82 /* AppDelegate.m */,
 				FBFB5DF11C33EF510039ED82 /* ViewController.h */,
 				FBFB5DF21C33EF510039ED82 /* ViewController.m */,
+				FBFB5E1E1C3460360039ED82 /* NoteListResultViewController.h */,
+				FBFB5E1F1C3460360039ED82 /* NoteListResultViewController.m */,
 				FBFB5DF41C33EF510039ED82 /* Main.storyboard */,
 				FBFB5DF71C33EF510039ED82 /* Assets.xcassets */,
 				FBFB5DF91C33EF510039ED82 /* LaunchScreen.storyboard */,
@@ -346,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBFB5DF31C33EF510039ED82 /* ViewController.m in Sources */,
+				FBFB5E201C3460360039ED82 /* NoteListResultViewController.m in Sources */,
 				FBFB5DF01C33EF510039ED82 /* AppDelegate.m in Sources */,
 				FBFB5DED1C33EF510039ED82 /* main.m in Sources */,
 			);
@@ -356,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBFB5E061C33EF510039ED82 /* iOStestTests.m in Sources */,
+				FBFB5E211C3460360039ED82 /* NoteListResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBFB5E111C33EF510039ED82 /* iOStestUITests.m in Sources */,
+				FBFB5E221C3460360039ED82 /* NoteListResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
