@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <ENSDK.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Set shared session key information.
+    [ENSession setSharedSessionConsumerKey:@"nrevmed"
+                            consumerSecret:@"e89dede9498d0801"
+                              optionalHost:ENSessionHostSandbox];
+    
     return YES;
 }
 
