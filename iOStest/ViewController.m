@@ -11,6 +11,8 @@
 #import "SVProgressHUD.h"
 #import "NoteListResultViewController.h"
 
+NSString *const pushNoteListSegueID = @"pushNoteList";
+
 @interface ViewController ()
 
 @property (nonatomic, strong) NSArray *notebookList;
@@ -120,7 +122,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.notebookList count];
+    return [self.notebookList count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -128,15 +130,23 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"notebook"];
     }
+    NSString *nameToDisplay;
+    if (indexPath.row == 0) {
+        nameToDisplay = NSLocalizedString(@"All Notes", @"All Notes");
+        nameToDisplay = [NSString stringWithFormat:@"* %@", nameToDisplay];
+    }
+    else{
     
-    ENNotebook *notebook = [self.notebookList objectAtIndex:indexPath.row];
-    NSString *nameToDisplay = notebook.name;
-    if (notebook.isBusinessNotebook) {
-        nameToDisplay = [NSString stringWithFormat:@"🏢 %@", nameToDisplay];
-    } else if (notebook.isShared) {
-        nameToDisplay = [NSString stringWithFormat:@"👥 %@", nameToDisplay];
-    } else {
-        nameToDisplay = [NSString stringWithFormat:@"👤 %@", nameToDisplay];
+        ENNotebook *notebook = [self.notebookList objectAtIndex:indexPath.row - 1];
+        nameToDisplay = notebook.name;
+        if (notebook.isBusinessNotebook) {
+            nameToDisplay = [NSString stringWithFormat:@"🏢 %@", nameToDisplay];
+        } else if (notebook.isShared) {
+            nameToDisplay = [NSString stringWithFormat:@"👥 %@", nameToDisplay];
+        } else {
+            nameToDisplay = [NSString stringWithFormat:@"👤 %@", nameToDisplay];
+        }
+
     }
     [cell.textLabel setText:nameToDisplay];
     
@@ -144,9 +154,22 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ENNotebook *notebook = [self.notebookList objectAtIndex:indexPath.row];
-    NoteListResultViewController *resultVC = [[NoteListResultViewController alloc] initWithNoteSearch:nil notebook:notebook];
-    [self.navigationController pushViewController:resultVC animated:YES];
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    ENNotebook *notebook = nil;
+    if (indexPath.row > 0) {
+        notebook = [self.notebookList objectAtIndex:indexPath.row];
+    }
+    
+    [self performSegueWithIdentifier:pushNoteListSegueID sender:notebook];
+//    NoteListResultViewController *resultVC = [[NoteListResultViewController alloc] initWithNoteSearch:nil notebook:notebook];
+//    [self.navigationController pushViewController:resultVC animated:YES];
+//    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    [(NoteListResultViewController*)segue.destinationViewController setNoteSearch:nil notebook:sender];
+    
 }
 @end

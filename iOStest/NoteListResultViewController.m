@@ -7,35 +7,30 @@
 //
 
 #import "NoteListResultViewController.h"
-//#import "NoteDetailViewController.h"
+#import "NoteDetailViewController.h"
 #import "SVProgressHUD.h"
 #import "CommonUtils.h"
+#import "CreateTextNoteViewController.h"
+
+NSString *const pushCreateTextNoteSegueID = @"pushCreateTextNote";
 
 @interface NoteListResultViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) ENNoteSearch *noteSearch;
 @property (nonatomic, strong) ENNotebook *notebookToSearch;
-@property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic, strong) NSArray * findNotesResults;
 @property (nonatomic, strong) NSMutableDictionary * thumbnails;
 @end
 
 @implementation NoteListResultViewController
 
-- (instancetype)initWithNoteSearch:(ENNoteSearch *)search notebook:(ENNotebook *)notebook{
-    if (self = [super init]) {
-        self.noteSearch = search;
-        self.notebookToSearch = notebook;
-    }
-    return self;
+- (void)setNoteSearch:(ENNoteSearch *)search notebook:(ENNotebook *)notebook{
+    self.noteSearch = search;
+    self.notebookToSearch = notebook;
 }
 
 - (void)loadView
 {
     [super loadView];
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    [self.tableView setDelegate:self];
-    [self.tableView setDataSource:self];
-    [self.view addSubview:self.tableView];
     
     self.thumbnails = [[NSMutableDictionary alloc] init];
 }
@@ -46,6 +41,7 @@
     self.navigationItem.title = @"Notes";
     
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    
     [[ENSession sharedSession] findNotesWithSearch:self.noteSearch
                                         inNotebook:self.notebookToSearch
                                            orScope:ENSessionSearchScopeAll
@@ -110,11 +106,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ENSessionFindNotesResult * result = self.findNotesResults[indexPath.row];
-//    NoteDetailViewController * vc = [[NoteDetailViewController alloc] init];
-//    vc.noteRef = result.noteRef;
-//    vc.noteTitle = result.title;
-//    [self.navigationController pushViewController:vc animated:YES];
+    NoteDetailViewController * vc = [[NoteDetailViewController alloc] init];
+    vc.noteRef = result.noteRef;
+    vc.noteTitle = result.title;
+    [self.navigationController pushViewController:vc animated:YES];
 
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    [(CreateTextNoteViewController*)segue.destinationViewController setNotebook:_notebookToSearch];
 }
 @end

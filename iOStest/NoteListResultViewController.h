@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <ENSDK.h>
 
-@interface NoteListResultViewController : UIViewController
+@interface NoteListResultViewController : UITableViewController
 
-- (instancetype)initWithNoteSearch:(ENNoteSearch *)search notebook:(ENNotebook *)notebook;
+- (void)setNoteSearch:(ENNoteSearch *)search notebook:(ENNotebook *)notebook;
 
 @end

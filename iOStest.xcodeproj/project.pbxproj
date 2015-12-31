@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		23EFAC75508804B948E798BC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E97D33EEA4EA5BC57A2D86 /* libPods.a */; };
+		FB50AF791C3560C200404F80 /* CreateTextNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF781C3560C200404F80 /* CreateTextNoteViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FB50AF7A1C3560C200404F80 /* CreateTextNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF781C3560C200404F80 /* CreateTextNoteViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FB50AF7B1C3560C200404F80 /* CreateTextNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF781C3560C200404F80 /* CreateTextNoteViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FBC3058B1C3590C2002637C9 /* NoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC3058A1C3590C2002637C9 /* NoteDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FBC3058C1C3590C2002637C9 /* NoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC3058A1C3590C2002637C9 /* NoteDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FBC3058D1C3590C2002637C9 /* NoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC3058A1C3590C2002637C9 /* NoteDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		FBFB5DED1C33EF510039ED82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFB5DEC1C33EF510039ED82 /* main.m */; };
 		FBFB5DF01C33EF510039ED82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFB5DEF1C33EF510039ED82 /* AppDelegate.m */; };
 		FBFB5DF31C33EF510039ED82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFB5DF21C33EF510039ED82 /* ViewController.m */; };
@@ -45,6 +51,10 @@
 		012A512F1D4EED50605374A8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		07F98E9B6301B0EADB8C9980 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		56E97D33EEA4EA5BC57A2D86 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB50AF771C3560C200404F80 /* CreateTextNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTextNoteViewController.h; sourceTree = "<group>"; };
+		FB50AF781C3560C200404F80 /* CreateTextNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTextNoteViewController.m; sourceTree = "<group>"; };
+		FBC305891C3590C2002637C9 /* NoteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteDetailViewController.h; sourceTree = "<group>"; };
+		FBC3058A1C3590C2002637C9 /* NoteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteDetailViewController.m; sourceTree = "<group>"; };
 		FBFB5DE81C33EF510039ED82 /* iOStest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOStest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBFB5DEC1C33EF510039ED82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBFB5DEE1C33EF510039ED82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,6 +151,10 @@
 				FBFB5DF21C33EF510039ED82 /* ViewController.m */,
 				FBFB5E1E1C3460360039ED82 /* NoteListResultViewController.h */,
 				FBFB5E1F1C3460360039ED82 /* NoteListResultViewController.m */,
+				FBC305891C3590C2002637C9 /* NoteDetailViewController.h */,
+				FBC3058A1C3590C2002637C9 /* NoteDetailViewController.m */,
+				FB50AF771C3560C200404F80 /* CreateTextNoteViewController.h */,
+				FB50AF781C3560C200404F80 /* CreateTextNoteViewController.m */,
 				FBFB5E231C3463E30039ED82 /* CommonUtils.h */,
 				FBFB5E241C3463E30039ED82 /* CommonUtils.m */,
 				FBFB5DF41C33EF510039ED82 /* Main.storyboard */,
@@ -360,7 +374,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBFB5DF31C33EF510039ED82 /* ViewController.m in Sources */,
+				FB50AF791C3560C200404F80 /* CreateTextNoteViewController.m in Sources */,
 				FBFB5E251C3463E30039ED82 /* CommonUtils.m in Sources */,
+				FBC3058B1C3590C2002637C9 /* NoteDetailViewController.m in Sources */,
 				FBFB5E201C3460360039ED82 /* NoteListResultViewController.m in Sources */,
 				FBFB5DF01C33EF510039ED82 /* AppDelegate.m in Sources */,
 				FBFB5DED1C33EF510039ED82 /* main.m in Sources */,
@@ -371,9 +387,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBC3058C1C3590C2002637C9 /* NoteDetailViewController.m in Sources */,
 				FBFB5E061C33EF510039ED82 /* iOStestTests.m in Sources */,
 				FBFB5E261C3463E30039ED82 /* CommonUtils.m in Sources */,
 				FBFB5E211C3460360039ED82 /* NoteListResultViewController.m in Sources */,
+				FB50AF7A1C3560C200404F80 /* CreateTextNoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,9 +399,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBC3058D1C3590C2002637C9 /* NoteDetailViewController.m in Sources */,
 				FBFB5E111C33EF510039ED82 /* iOStestUITests.m in Sources */,
 				FBFB5E271C3463E30039ED82 /* CommonUtils.m in Sources */,
 				FBFB5E221C3460360039ED82 /* NoteListResultViewController.m in Sources */,
+				FB50AF7B1C3560C200404F80 /* CreateTextNoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
