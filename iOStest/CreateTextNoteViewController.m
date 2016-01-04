@@ -18,9 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _bodyTextView.layer.borderWidth = 1;
-    _bodyTextView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    _bodyTextView.layer.cornerRadius = 5;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,6 +35,22 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void) configureInitialInterface{
+
+    //Round Aspect
+    _bodyTextView.layer.borderWidth = 1;
+    _bodyTextView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    _bodyTextView.layer.cornerRadius = 5;
+    
+    //Localize Strings
+    
+    _bodyTextView.text = NSLocalizedString(@"Note Text ...", @"Note Text ...");
+    _titleTextField.text = NSLocalizedString(@"Note Title", @"Note Title");
+
+
+}
+
+
 
 #pragma mark - Action Methods
 

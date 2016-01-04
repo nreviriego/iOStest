@@ -122,7 +122,7 @@ NSString *const pushNoteListSegueID = @"pushNoteList";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([[ENSession sharedSession] isAuthenticated]) {
+    if (![[ENSession sharedSession] isAuthenticated]) {
     
         return 0;
     }
