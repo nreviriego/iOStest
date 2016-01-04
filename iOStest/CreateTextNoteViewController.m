@@ -24,6 +24,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [self configureInitialInterface];
 }
 
 /*
@@ -67,8 +68,17 @@
     __weak typeof(self) weakSelf = self;
     
     [[ENSession sharedSession] uploadNote:note notebook:_notebook completion:^(ENNoteRef * noteRef, NSError * uploadNoteError) {
-        
+        if (uploadNoteError) {
+            [[[UIAlertView alloc] initWithTitle:nil
+                                        message:[uploadNoteError localizedDescription]
+                                       delegate:nil
+                              cancelButtonTitle:nil
+                              otherButtonTitles:@"OK", nil] show];
+            return;
+        }
+
         [weakSelf.navigationController popViewControllerAnimated:YES];
+        [weakSelf.delegate createTextNoteViewControllerDidCreateNote:weakSelf];
         
     }];
 

@@ -14,7 +14,7 @@
 
 NSString *const pushCreateTextNoteSegueID = @"pushCreateTextNote";
 
-@interface NoteListResultViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface NoteListResultViewController () <UITableViewDataSource, UITableViewDelegate, CreateTextNoteDelegate>
 @property (nonatomic, strong) ENNoteSearch *noteSearch;
 @property (nonatomic, strong) ENNotebook *notebookToSearch;
 @property (nonatomic, strong) NSArray * findNotesResults;
@@ -40,6 +40,11 @@ NSString *const pushCreateTextNoteSegueID = @"pushCreateTextNote";
     [super viewDidLoad];
     self.navigationItem.title = @"Notes";
     
+    [self findAndPresentNotes];
+}
+
+- (void) findAndPresentNotes{
+
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     
     [[ENSession sharedSession] findNotesWithSearch:self.noteSearch
@@ -64,6 +69,8 @@ NSString *const pushCreateTextNoteSegueID = @"pushCreateTextNote";
                                                 [self.tableView reloadData];
                                             }
                                         }];
+
+
 }
 
 #pragma mark - UITableView
@@ -119,5 +126,13 @@ NSString *const pushCreateTextNoteSegueID = @"pushCreateTextNote";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     [(CreateTextNoteViewController*)segue.destinationViewController setNotebook:_notebookToSearch];
+    [(CreateTextNoteViewController*)segue.destinationViewController setDelegate:self];
+}
+
+#pragma mark - Create Text Note Delegate
+
+- (void) createTextNoteViewControllerDidCreateNote:(CreateTextNoteViewController *)createTextNoteViewController{
+
+    [self findAndPresentNotes];
 }
 @end

@@ -160,7 +160,7 @@ NSString *const pushNoteListSegueID = @"pushNoteList";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ENNotebook *notebook = nil;
     if (indexPath.row > 0) {
-        notebook = [self.notebookList objectAtIndex:indexPath.row];
+        notebook = [self.notebookList objectAtIndex:indexPath.row - 1];
     }
     
     [self performSegueWithIdentifier:pushNoteListSegueID sender:notebook];
